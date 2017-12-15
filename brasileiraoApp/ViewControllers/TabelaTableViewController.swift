@@ -1,5 +1,5 @@
 //
-//  PartidasTableViewController.swift
+//  TabelaTableViewController.swift
 //  brasileiraoApp
 //
 //  Created by Pedro Nascimento on 15/12/2017.
@@ -8,11 +8,13 @@
 
 import UIKit
 
-class PartidasTableViewController: UITableViewController {
+class TabelaTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.addTarget(self, action: #selector(atualizar), for: .valueChanged)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -24,12 +26,30 @@ class PartidasTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.atualizar()
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        
+        if CampeonatoManager.sharedInstance.timesArray.count ==  0 {
+            let semRegistrosLabel = UILabel()
+            semRegistrosLabel.text = "Não há registros, verifique sua conexão\ne puxe para atualizar."
+            semRegistrosLabel.textAlignment = .center
+            semRegistrosLabel.lineBreakMode = .byWordWrapping
+            semRegistrosLabel.numberOfLines = 2
+            
+            self.tableView.backgroundView = semRegistrosLabel
+            self.tableView.separatorStyle = .none
+            
+            return 0
+        }
+        
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,6 +57,11 @@ class PartidasTableViewController: UITableViewController {
         return 0
     }
 
+    @objc func atualizar() {
+        RestServices.buscarCampeonato()
+        self.refreshControl?.endRefreshing()
+    }
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

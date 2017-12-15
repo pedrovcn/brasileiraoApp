@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BE542F20D8AEFAF7D38D3FA /* Pods_brasileiraoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE4C00F1840245BD23F5A5B /* Pods_brasileiraoApp.framework */; };
+		2963A8641FE43B7100B0EDB8 /* CampeonatoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2963A8631FE43B7100B0EDB8 /* CampeonatoManager.swift */; };
 		29BC9ADD1FE3750D00CF2BE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC9ADC1FE3750D00CF2BE1 /* AppDelegate.swift */; };
 		29BC9AE21FE3750D00CF2BE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29BC9AE01FE3750D00CF2BE1 /* Main.storyboard */; };
 		29BC9AE41FE3750D00CF2BE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29BC9AE31FE3750D00CF2BE1 /* Assets.xcassets */; };
 		29BC9AE71FE3750D00CF2BE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29BC9AE51FE3750D00CF2BE1 /* LaunchScreen.storyboard */; };
 		29BC9AF11FE3839C00CF2BE1 /* TabelaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC9AF01FE3839C00CF2BE1 /* TabelaTableViewController.swift */; };
 		29BC9AF31FE383EA00CF2BE1 /* PartidasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC9AF21FE383EA00CF2BE1 /* PartidasTableViewController.swift */; };
+		29D027341FE4403E006DBB25 /* RestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D027331FE4403E006DBB25 /* RestService.swift */; };
+		29D027361FE443CE006DBB25 /* RestEndpoints.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29D027351FE443CE006DBB25 /* RestEndpoints.plist */; };
+		29D027381FE444F9006DBB25 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D027371FE444F9006DBB25 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2963A8631FE43B7100B0EDB8 /* CampeonatoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampeonatoManager.swift; sourceTree = "<group>"; };
 		29BC9AD91FE3750D00CF2BE1 /* brasileiraoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = brasileiraoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29BC9ADC1FE3750D00CF2BE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29BC9AE11FE3750D00CF2BE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -24,6 +30,12 @@
 		29BC9AE81FE3750D00CF2BE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29BC9AF01FE3839C00CF2BE1 /* TabelaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabelaTableViewController.swift; sourceTree = "<group>"; };
 		29BC9AF21FE383EA00CF2BE1 /* PartidasTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartidasTableViewController.swift; sourceTree = "<group>"; };
+		29D027331FE4403E006DBB25 /* RestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestService.swift; sourceTree = "<group>"; };
+		29D027351FE443CE006DBB25 /* RestEndpoints.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RestEndpoints.plist; sourceTree = "<group>"; };
+		29D027371FE444F9006DBB25 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		580CDAED80ABF82B794D554F /* Pods-brasileiraoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-brasileiraoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-brasileiraoApp/Pods-brasileiraoApp.release.xcconfig"; sourceTree = "<group>"; };
+		7BF5B93DD1395F31BC6464FC /* Pods-brasileiraoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-brasileiraoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-brasileiraoApp/Pods-brasileiraoApp.debug.xcconfig"; sourceTree = "<group>"; };
+		CFE4C00F1840245BD23F5A5B /* Pods_brasileiraoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_brasileiraoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +43,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BE542F20D8AEFAF7D38D3FA /* Pods_brasileiraoApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2927E3D31FE3FDD8003E6469 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				29BC9AF01FE3839C00CF2BE1 /* TabelaTableViewController.swift */,
+				29BC9AF21FE383EA00CF2BE1 /* PartidasTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2927E3D41FE3FDEB003E6469 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				29BC9AE01FE3750D00CF2BE1 /* Main.storyboard */,
+				29BC9AE51FE3750D00CF2BE1 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		29BC9AD01FE3750D00CF2BE1 = {
 			isa = PBXGroup;
 			children = (
 				29BC9ADB1FE3750D00CF2BE1 /* brasileiraoApp */,
 				29BC9ADA1FE3750D00CF2BE1 /* Products */,
+				A19C9E23D52C367837DDA653 /* Pods */,
+				CCEF47CD03CB58552BB4600F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +90,41 @@
 			isa = PBXGroup;
 			children = (
 				29BC9ADC1FE3750D00CF2BE1 /* AppDelegate.swift */,
-				29BC9AE01FE3750D00CF2BE1 /* Main.storyboard */,
 				29BC9AE31FE3750D00CF2BE1 /* Assets.xcassets */,
-				29BC9AE51FE3750D00CF2BE1 /* LaunchScreen.storyboard */,
+				2963A8631FE43B7100B0EDB8 /* CampeonatoManager.swift */,
 				29BC9AE81FE3750D00CF2BE1 /* Info.plist */,
-				29BC9AF01FE3839C00CF2BE1 /* TabelaTableViewController.swift */,
-				29BC9AF21FE383EA00CF2BE1 /* PartidasTableViewController.swift */,
+				2927E3D41FE3FDEB003E6469 /* Storyboards */,
+				2927E3D31FE3FDD8003E6469 /* ViewControllers */,
+				29D027391FE44565006DBB25 /* Service */,
 			);
 			path = brasileiraoApp;
+			sourceTree = "<group>";
+		};
+		29D027391FE44565006DBB25 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				29D027331FE4403E006DBB25 /* RestService.swift */,
+				29D027351FE443CE006DBB25 /* RestEndpoints.plist */,
+				29D027371FE444F9006DBB25 /* Constants.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		A19C9E23D52C367837DDA653 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7BF5B93DD1395F31BC6464FC /* Pods-brasileiraoApp.debug.xcconfig */,
+				580CDAED80ABF82B794D554F /* Pods-brasileiraoApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CCEF47CD03CB58552BB4600F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFE4C00F1840245BD23F5A5B /* Pods_brasileiraoApp.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +134,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 29BC9AEB1FE3750D00CF2BE1 /* Build configuration list for PBXNativeTarget "brasileiraoApp" */;
 			buildPhases = (
+				DA0A020A0FC54D16B275E1F9 /* [CP] Check Pods Manifest.lock */,
 				29BC9AD51FE3750D00CF2BE1 /* Sources */,
 				29BC9AD61FE3750D00CF2BE1 /* Frameworks */,
 				29BC9AD71FE3750D00CF2BE1 /* Resources */,
+				40A7FA13E99C8B7141D82A92 /* [CP] Embed Pods Frameworks */,
+				09D324FFF3F64E109E1982E0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,19 +192,77 @@
 				29BC9AE71FE3750D00CF2BE1 /* LaunchScreen.storyboard in Resources */,
 				29BC9AE41FE3750D00CF2BE1 /* Assets.xcassets in Resources */,
 				29BC9AE21FE3750D00CF2BE1 /* Main.storyboard in Resources */,
+				29D027361FE443CE006DBB25 /* RestEndpoints.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09D324FFF3F64E109E1982E0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-brasileiraoApp/Pods-brasileiraoApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40A7FA13E99C8B7141D82A92 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-brasileiraoApp/Pods-brasileiraoApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-brasileiraoApp/Pods-brasileiraoApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA0A020A0FC54D16B275E1F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-brasileiraoApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		29BC9AD51FE3750D00CF2BE1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2963A8641FE43B7100B0EDB8 /* CampeonatoManager.swift in Sources */,
 				29BC9AF11FE3839C00CF2BE1 /* TabelaTableViewController.swift in Sources */,
 				29BC9ADD1FE3750D00CF2BE1 /* AppDelegate.swift in Sources */,
 				29BC9AF31FE383EA00CF2BE1 /* PartidasTableViewController.swift in Sources */,
+				29D027341FE4403E006DBB25 /* RestService.swift in Sources */,
+				29D027381FE444F9006DBB25 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +397,7 @@
 		};
 		29BC9AEC1FE3750D00CF2BE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BF5B93DD1395F31BC6464FC /* Pods-brasileiraoApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -291,6 +413,7 @@
 		};
 		29BC9AED1FE3750D00CF2BE1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 580CDAED80ABF82B794D554F /* Pods-brasileiraoApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
