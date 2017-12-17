@@ -9,7 +9,12 @@
 class CampeonatoManager {
     static let sharedInstance = CampeonatoManager()
     
-    let timesArray = Array<Int>()
-    let partidasArray =  Array<Int>()
+    var clubesArray: Array<Clube>!
+    var partidasArray: Array<Partida>!
 
+    private init() {
+        clubesArray = Array<Clube>()
+        partidasArray = Array<Partida>()
+    }
+    
 }

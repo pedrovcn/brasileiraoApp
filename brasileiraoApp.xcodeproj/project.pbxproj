@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0BE542F20D8AEFAF7D38D3FA /* Pods_brasileiraoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE4C00F1840245BD23F5A5B /* Pods_brasileiraoApp.framework */; };
+		2953F1271FE5B178004FA52D /* PartidaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2953F1261FE5B178004FA52D /* PartidaTableViewCell.swift */; };
+		2953F12A1FE5D651004FA52D /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2953F1291FE5D651004FA52D /* Array.swift */; };
 		2963A8641FE43B7100B0EDB8 /* CampeonatoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2963A8631FE43B7100B0EDB8 /* CampeonatoManager.swift */; };
 		29BC9ADD1FE3750D00CF2BE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC9ADC1FE3750D00CF2BE1 /* AppDelegate.swift */; };
 		29BC9AE21FE3750D00CF2BE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29BC9AE01FE3750D00CF2BE1 /* Main.storyboard */; };
@@ -18,9 +20,14 @@
 		29D027341FE4403E006DBB25 /* RestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D027331FE4403E006DBB25 /* RestService.swift */; };
 		29D027361FE443CE006DBB25 /* RestEndpoints.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29D027351FE443CE006DBB25 /* RestEndpoints.plist */; };
 		29D027381FE444F9006DBB25 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D027371FE444F9006DBB25 /* Constants.swift */; };
+		29D0273B1FE4511B006DBB25 /* Clube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D0273A1FE4511B006DBB25 /* Clube.swift */; };
+		29D0273D1FE45137006DBB25 /* Partida.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D0273C1FE45137006DBB25 /* Partida.swift */; };
+		29D027401FE469BF006DBB25 /* ClubeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D0273F1FE469BF006DBB25 /* ClubeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2953F1261FE5B178004FA52D /* PartidaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartidaTableViewCell.swift; sourceTree = "<group>"; };
+		2953F1291FE5D651004FA52D /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		2963A8631FE43B7100B0EDB8 /* CampeonatoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampeonatoManager.swift; sourceTree = "<group>"; };
 		29BC9AD91FE3750D00CF2BE1 /* brasileiraoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = brasileiraoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29BC9ADC1FE3750D00CF2BE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +40,9 @@
 		29D027331FE4403E006DBB25 /* RestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestService.swift; sourceTree = "<group>"; };
 		29D027351FE443CE006DBB25 /* RestEndpoints.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RestEndpoints.plist; sourceTree = "<group>"; };
 		29D027371FE444F9006DBB25 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		29D0273A1FE4511B006DBB25 /* Clube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clube.swift; sourceTree = "<group>"; };
+		29D0273C1FE45137006DBB25 /* Partida.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Partida.swift; sourceTree = "<group>"; };
+		29D0273F1FE469BF006DBB25 /* ClubeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubeTableViewCell.swift; sourceTree = "<group>"; };
 		580CDAED80ABF82B794D554F /* Pods-brasileiraoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-brasileiraoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-brasileiraoApp/Pods-brasileiraoApp.release.xcconfig"; sourceTree = "<group>"; };
 		7BF5B93DD1395F31BC6464FC /* Pods-brasileiraoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-brasileiraoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-brasileiraoApp/Pods-brasileiraoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		CFE4C00F1840245BD23F5A5B /* Pods_brasileiraoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_brasileiraoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +78,15 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		2953F1281FE5B17F004FA52D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				29D0273F1FE469BF006DBB25 /* ClubeTableViewCell.swift */,
+				2953F1261FE5B178004FA52D /* PartidaTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		29BC9AD01FE3750D00CF2BE1 = {
 			isa = PBXGroup;
 			children = (
@@ -90,12 +109,15 @@
 			isa = PBXGroup;
 			children = (
 				29BC9ADC1FE3750D00CF2BE1 /* AppDelegate.swift */,
+				2953F1291FE5D651004FA52D /* Array.swift */,
 				29BC9AE31FE3750D00CF2BE1 /* Assets.xcassets */,
 				2963A8631FE43B7100B0EDB8 /* CampeonatoManager.swift */,
+				2953F1281FE5B17F004FA52D /* Cells */,
+				29D0273E1FE4691B006DBB25 /* Entities */,
 				29BC9AE81FE3750D00CF2BE1 /* Info.plist */,
+				29D027391FE44565006DBB25 /* Service */,
 				2927E3D41FE3FDEB003E6469 /* Storyboards */,
 				2927E3D31FE3FDD8003E6469 /* ViewControllers */,
-				29D027391FE44565006DBB25 /* Service */,
 			);
 			path = brasileiraoApp;
 			sourceTree = "<group>";
@@ -108,6 +130,15 @@
 				29D027371FE444F9006DBB25 /* Constants.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		29D0273E1FE4691B006DBB25 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				29D0273A1FE4511B006DBB25 /* Clube.swift */,
+				29D0273C1FE45137006DBB25 /* Partida.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		A19C9E23D52C367837DDA653 /* Pods */ = {
@@ -222,10 +253,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-brasileiraoApp/Pods-brasileiraoApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -261,8 +294,13 @@
 				29BC9AF11FE3839C00CF2BE1 /* TabelaTableViewController.swift in Sources */,
 				29BC9ADD1FE3750D00CF2BE1 /* AppDelegate.swift in Sources */,
 				29BC9AF31FE383EA00CF2BE1 /* PartidasTableViewController.swift in Sources */,
+				29D0273B1FE4511B006DBB25 /* Clube.swift in Sources */,
+				29D027401FE469BF006DBB25 /* ClubeTableViewCell.swift in Sources */,
+				2953F12A1FE5D651004FA52D /* Array.swift in Sources */,
+				29D0273D1FE45137006DBB25 /* Partida.swift in Sources */,
 				29D027341FE4403E006DBB25 /* RestService.swift in Sources */,
 				29D027381FE444F9006DBB25 /* Constants.swift in Sources */,
+				2953F1271FE5B178004FA52D /* PartidaTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class TabelaTableViewController: UITableViewController {
 
@@ -15,20 +16,6 @@ class TabelaTableViewController: UITableViewController {
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.addTarget(self, action: #selector(atualizar), for: .valueChanged)
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         self.atualizar()
     }
 
@@ -36,7 +23,7 @@ class TabelaTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         
-        if CampeonatoManager.sharedInstance.timesArray.count ==  0 {
+        if CampeonatoManager.sharedInstance.clubesArray.count ==  0 {
             let semRegistrosLabel = UILabel()
             semRegistrosLabel.text = "Não há registros, verifique sua conexão\ne puxe para atualizar."
             semRegistrosLabel.textAlignment = .center
@@ -54,23 +41,39 @@ class TabelaTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    @objc func atualizar() {
-        RestServices.buscarCampeonato()
-        self.refreshControl?.endRefreshing()
+        return CampeonatoManager.sharedInstance.clubesArray.count
     }
     
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ClubeCell", for: indexPath) as! ClubeTableViewCell
 
-        // Configure the cell...
+        let clube = CampeonatoManager.sharedInstance.clubesArray[indexPath.row]
+        
+        cell.escudoImageView.kf.indicatorType = .activity
+        cell.escudoImageView.kf.setImage(with: URL(string: clube.escudoUrl!))
+        
+        cell.posicaoLabel.text = NSString.init(format: "%d", clube.posicao!) as String
+        cell.nomeLabel.text = clube.nome
 
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
+    
+    @objc func atualizar() {
+        RestServices.buscarCampeonato() { error in
+            if error != nil {
+                let alert = UIAlertController.init(title: "Erro", message: error?.localizedDescription, preferredStyle: .alert)
+                let action = UIAlertAction.init(title: "OK", style: .default, handler: nil)
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: nil)
+            }
+            self.tableView.reloadData()
+            self.refreshControl?.endRefreshing()
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -81,39 +84,10 @@ class TabelaTableViewController: UITableViewController {
     */
 
     /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
     // Override to support conditional rearranging of the table view.
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
     */
 

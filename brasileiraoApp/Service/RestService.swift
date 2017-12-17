@@ -22,14 +22,55 @@ class RestServices {
         return ""
     }
     
-    class func buscarCampeonato() {
+    class func buscarCampeonato(completion: @escaping(Error?) -> Void) {
         Alamofire.request(getCompleteUrl(forKey: Constants.ServerKeys.partidas)).responseJSON { response in
-            debugPrint(response)
-            
+//            debugPrint(response)
+
             if let json = response.result.value {
-                print("JSON: \(json)")
+                let dictionary = json as! NSDictionary
+                initCampeonato(dictionary: dictionary)
+                completion(nil)
+                
+            } else {
+                completion(NSError.init(domain: "Não foi possível buscar informações.", code: 1, userInfo: nil))
             }
         }
+        
     }
     
+    private class func initCampeonato(dictionary: NSDictionary) {
+        
+        let array = dictionary["partidas"] as! Array<NSDictionary>
+        var clubesArray = Array<Clube>()
+        var partidasArray = Array<Partida>()
+        
+        for dict in array {
+            if let partida = Partida.init(dictionary: dict) {
+                let clubes = dictionary["clubes"] as! NSDictionary
+                
+                let clubeCasa = clubes[partida.idClubeCasa!] as! NSDictionary
+                partida.clubeCasa = Clube.init(dictionary: clubeCasa)
+                
+                let clubeVisitante = clubes[partida.idClubeVisitante!] as! NSDictionary
+                partida.clubeVisitante = Clube.init(dictionary: clubeVisitante)
+                
+                clubesArray.append(partida.clubeCasa!)
+                clubesArray.append(partida.clubeVisitante!)
+
+                partidasArray.append(partida)
+            }
+        }
+        
+        CampeonatoManager.sharedInstance.partidasArray = partidasArray
+        CampeonatoManager.sharedInstance.clubesArray = clubesArray
+        
+    }
+    
+    private class func getEscudo(url: String) -> UIImage? {
+        // Pra que funcione a image precisa existir no servidor
+        let url = URL(string: url)
+        let data = try? Data(contentsOf: url!)
+        
+        return UIImage.init(data: data!)
+    }
 }

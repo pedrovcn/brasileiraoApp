@@ -7,5 +7,6 @@ target 'brasileiraoApp' do
 
   # Pods for brasileiraoApp
   pod 'Alamofire', '~> 4.5'
-
+  pod 'Kingfisher', '~> 4.0'
+  
 end
