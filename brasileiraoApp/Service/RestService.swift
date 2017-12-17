@@ -64,13 +64,12 @@ class RestServices {
         CampeonatoManager.sharedInstance.partidasArray = partidasArray
         CampeonatoManager.sharedInstance.clubesArray = clubesArray
         
-    }
-    
-    private class func getEscudo(url: String) -> UIImage? {
-        // Pra que funcione a image precisa existir no servidor
-        let url = URL(string: url)
-        let data = try? Data(contentsOf: url!)
+        // Ordenando em ordem crescente
+        CampeonatoManager.sharedInstance.clubesArray.sort { $0.posicao! < $1.posicao! }
+        CampeonatoManager.sharedInstance.partidasArray.sort {$0.dataPartida! < $1.dataPartida! }
         
-        return UIImage.init(data: data!)
+        // Removendo os últimos 10 clubes
+        CampeonatoManager.sharedInstance.clubesArray.removeSubrange(10...19)
+        
     }
 }

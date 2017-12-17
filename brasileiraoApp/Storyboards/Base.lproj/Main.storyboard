@@ -156,32 +156,32 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="obd-9H-neg">
-                                            <rect key="frame" x="15" y="30" width="60" height="60"/>
+                                            <rect key="frame" x="46" y="29" width="60" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="LCL-xD-yob"/>
                                                 <constraint firstAttribute="height" constant="60" id="aiw-Nn-ar6"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Nome]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wua-OT-fu5">
-                                            <rect key="frame" x="187" y="44" width="80" height="30"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O69-ye-1Xv">
+                                            <rect key="frame" x="15" y="44" width="16" height="30"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Posição]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O69-ye-1Xv">
-                                            <rect key="frame" x="85" y="45" width="99" height="30"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Nome]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wua-OT-fu5">
+                                            <rect key="frame" x="121" y="44" width="80" height="30"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="obd-9H-neg" firstAttribute="leading" secondItem="1w7-XS-rJN" secondAttribute="leading" constant="15" id="01r-iY-223"/>
                                         <constraint firstItem="obd-9H-neg" firstAttribute="centerY" secondItem="1w7-XS-rJN" secondAttribute="centerY" id="CsW-tl-6R2"/>
-                                        <constraint firstItem="Wua-OT-fu5" firstAttribute="leading" secondItem="O69-ye-1Xv" secondAttribute="trailing" constant="3" id="WP8-EM-TPh"/>
+                                        <constraint firstItem="Wua-OT-fu5" firstAttribute="leading" secondItem="obd-9H-neg" secondAttribute="trailing" constant="15" id="N62-yf-C3Y"/>
+                                        <constraint firstItem="O69-ye-1Xv" firstAttribute="leading" secondItem="1w7-XS-rJN" secondAttribute="leading" constant="15" id="RuG-hR-bAl"/>
                                         <constraint firstItem="O69-ye-1Xv" firstAttribute="centerY" secondItem="1w7-XS-rJN" secondAttribute="centerY" id="hew-y2-ZxQ"/>
+                                        <constraint firstItem="obd-9H-neg" firstAttribute="leading" secondItem="O69-ye-1Xv" secondAttribute="trailing" constant="15" id="vPm-Qg-JqT"/>
                                         <constraint firstItem="Wua-OT-fu5" firstAttribute="centerY" secondItem="1w7-XS-rJN" secondAttribute="centerY" id="wGI-tD-Wg6"/>
-                                        <constraint firstItem="O69-ye-1Xv" firstAttribute="leading" secondItem="obd-9H-neg" secondAttribute="trailing" constant="10" id="zaN-7e-5tu"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -197,7 +197,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="AIs-FP-1FS">
-                        <barButtonItem key="rightBarButtonItem" title="Reordenar" id="2pd-sS-Kr8"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reordenar" id="2pd-sS-Kr8">
+                            <connections>
+                                <action selector="reordenar" destination="64w-PP-PVw" id="Nn0-WA-N0z"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sfG-Sf-3xP" userLabel="First Responder" sceneMemberID="firstResponder"/>

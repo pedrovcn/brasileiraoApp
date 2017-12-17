@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0BE542F20D8AEFAF7D38D3FA /* Pods_brasileiraoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE4C00F1840245BD23F5A5B /* Pods_brasileiraoApp.framework */; };
 		2953F1271FE5B178004FA52D /* PartidaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2953F1261FE5B178004FA52D /* PartidaTableViewCell.swift */; };
-		2953F12A1FE5D651004FA52D /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2953F1291FE5D651004FA52D /* Array.swift */; };
 		2963A8641FE43B7100B0EDB8 /* CampeonatoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2963A8631FE43B7100B0EDB8 /* CampeonatoManager.swift */; };
 		29BC9ADD1FE3750D00CF2BE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC9ADC1FE3750D00CF2BE1 /* AppDelegate.swift */; };
 		29BC9AE21FE3750D00CF2BE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29BC9AE01FE3750D00CF2BE1 /* Main.storyboard */; };
@@ -27,7 +26,6 @@
 
 /* Begin PBXFileReference section */
 		2953F1261FE5B178004FA52D /* PartidaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartidaTableViewCell.swift; sourceTree = "<group>"; };
-		2953F1291FE5D651004FA52D /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		2963A8631FE43B7100B0EDB8 /* CampeonatoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampeonatoManager.swift; sourceTree = "<group>"; };
 		29BC9AD91FE3750D00CF2BE1 /* brasileiraoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = brasileiraoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29BC9ADC1FE3750D00CF2BE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				29BC9ADC1FE3750D00CF2BE1 /* AppDelegate.swift */,
-				2953F1291FE5D651004FA52D /* Array.swift */,
 				29BC9AE31FE3750D00CF2BE1 /* Assets.xcassets */,
 				2963A8631FE43B7100B0EDB8 /* CampeonatoManager.swift */,
 				2953F1281FE5B17F004FA52D /* Cells */,
@@ -296,7 +293,6 @@
 				29BC9AF31FE383EA00CF2BE1 /* PartidasTableViewController.swift in Sources */,
 				29D0273B1FE4511B006DBB25 /* Clube.swift in Sources */,
 				29D027401FE469BF006DBB25 /* ClubeTableViewCell.swift in Sources */,
-				2953F12A1FE5D651004FA52D /* Array.swift in Sources */,
 				29D0273D1FE45137006DBB25 /* Partida.swift in Sources */,
 				29D027341FE4403E006DBB25 /* RestService.swift in Sources */,
 				29D027381FE444F9006DBB25 /* Constants.swift in Sources */,

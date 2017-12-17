@@ -33,6 +33,7 @@ class PartidasTableViewController: UITableViewController {
             return 0
         }
         
+        self.tableView.separatorStyle = .singleLine
         return 1
     }
     

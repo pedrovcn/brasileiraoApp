@@ -11,6 +11,8 @@ import Kingfisher
 
 class TabelaTableViewController: UITableViewController {
 
+    var ordemAscendente = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.refreshControl = UIRefreshControl()
@@ -36,6 +38,7 @@ class TabelaTableViewController: UITableViewController {
             return 0
         }
         
+        self.tableView.separatorStyle = .singleLine
         return 1
     }
 
@@ -69,26 +72,29 @@ class TabelaTableViewController: UITableViewController {
                 let action = UIAlertAction.init(title: "OK", style: .default, handler: nil)
                 alert.addAction(action)
                 self.present(alert, animated: true, completion: nil)
+                
+            } else {
+                self.sortArray(ascending: self.ordemAscendente)
+                self.tableView.reloadData()
+                
             }
-            self.tableView.reloadData()
+            
             self.refreshControl?.endRefreshing()
         }
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    func sortArray(ascending: Bool) {
+        if ascending {
+            CampeonatoManager.sharedInstance.clubesArray.sort { $0.posicao! < $1.posicao! }
+        } else {
+            CampeonatoManager.sharedInstance.clubesArray.sort { $0.posicao! > $1.posicao! }
+        }
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    @IBAction func reordenar() {
+        self.ordemAscendente = !self.ordemAscendente
+        self.sortArray(ascending: self.ordemAscendente)
+        self.tableView.reloadData()
     }
-    */
 
 }
